@@ -1,6 +1,8 @@
 # Lecture materials for Design of Spaceflight Vehicles
 
 Lecture materials for Design of Spaceflight Vehicles in Hokkaido Summer Institute 2023
+This course has been opened at Hokkaido Summer Institute in Hokkaido University since 2022: https://hokkaidosummerinstitute.oia.hokudai.ac.jp/
+
 
 # Outlines
 
