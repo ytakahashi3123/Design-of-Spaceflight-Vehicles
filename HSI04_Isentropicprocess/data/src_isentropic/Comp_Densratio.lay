@@ -1,0 +1,296 @@
+#!MC 1410
+$!VarSet |LFDSFN1| = '"case_gamma_1.4/tecplot_nozzleflow.dat"'
+$!VarSet |LFDSVL1| = '"mach" "temperature_ratio(TbyT0)" "pressure_ratio(pbyp0)" "density_ratio(rhobyrho0)"'
+$!VarSet |LFDSFN2| = '"case_gamma_1.66/tecplot_nozzleflow.dat" "case_gamma_1.2/tecplot_nozzleflow.dat"'
+$!VarSet |LFDSVL2| = '"mach" "temperature_ratio(TbyT0)" "pressure_ratio(pbyp0)" "density_ratio(rhobyrho0)"'
+$!SetStyleBase Factory
+$!GlobalPaper 
+  PaperSizeInfo
+    {
+    Letter
+      {
+      Width = 8.5
+      Height = 11
+      LeftHardClipOffset = 0.125
+      RightHardClipOffset = 0.125
+      TopHardClipOffset = 0.125
+      BottomHardClipOffset = 0.125
+      }
+    }
+$!Page 
+  Name = 'Untitled'
+  PaperAttributes
+    {
+    BackgroundColor = White
+    IsTransparent = Yes
+    OrientPortrait = No
+    ShowGrid = Yes
+    ShowRuler = No
+    ShowPaper = No
+    PaperSize = Letter
+    RulerSpacing = OneInch
+    PaperGridSpacing = HalfInch
+    RegionInWorkArea
+      {
+      X1 = 1
+      Y1 = 0.25
+      X2 = 10
+      Y2 = 8.25
+      }
+    }
+### Frame Number 1 ###
+$!ReadDataSet  '|LFDSFN1|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL1|'
+$!RemoveVar |LFDSVL1|
+$!RemoveVar |LFDSFN1|
+$!ReadDataSet  '|LFDSFN2|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL2|'
+$!RemoveVar |LFDSVL2|
+$!RemoveVar |LFDSFN2|
+$!RenameDataSetZone 
+  Zone = 1
+  Name = 'gamma1.40'
+$!RenameDataSetZone 
+  Zone = 3
+  Name = 'gamma1.20'
+$!FrameLayout 
+  ShowBorder = No
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = 1
+    Y = 0.25
+    }
+  Width = 9
+  Height = 8
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = 'Frame 001'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-3]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    TextShape
+      {
+      FontFamily = 'Calibri'
+      }
+    Box
+      {
+      BoxType = Filled
+      Margin = 2.5
+      }
+    XYPos
+      {
+      X = 83.952
+      Y = 82.071
+      }
+    }
+$!LineMap  [1]
+  Name = 'Specificheatratio_1.20'
+  Assign
+    {
+    Zone = 3
+    XAxisVar = 1
+    YAxisVar = 4
+    }
+  Lines
+    {
+    Color = Red
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [2]
+  Name = 'Specificheatratio_1.44'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 4
+    }
+  Lines
+    {
+    Color = Blue
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [3]
+  Name = 'Specificheatratio_1.66'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 4
+    }
+  Lines
+    {
+    Color = Green
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = 0.10000000149011611938
+    RangeMax = 20
+    GRSpacing = 5
+    TickLabel
+      {
+      TextShape
+        {
+        FontFamily = 'Calibri'
+        }
+      }
+    Gridlines
+      {
+      Show = Yes
+      }
+    Title
+      {
+      TitleMode = UseText
+      Text = 'mach number'
+      TextShape
+        {
+        FontFamily = 'Calibri'
+        }
+      Offset = 5
+      }
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    CoordScale = Log
+    RangeMin = 9.9999999999999995475E-07
+    RangeMax = 1
+    GRSpacing = 0.2
+    TickLabel
+      {
+      TextShape
+        {
+        FontFamily = 'Calibri'
+        }
+      }
+    Gridlines
+      {
+      Show = Yes
+      }
+    Title
+      {
+      TitleMode = UseText
+      Text = 'Density ratio (rho/rho<sub>0</sub>)'
+      TextShape
+        {
+        FontFamily = 'Calibri'
+        }
+      Offset = 9
+      }
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 38.37677656942283
+    Y = 41.48109787674781
+    }
+  TextShape
+    {
+    FontFamily = 'Symbol'
+    IsBold = No
+    Height = 22
+    }
+  Text = 'g=1.20'
+$!AttachText 
+  AnchorPos
+    {
+    X = 51.54209102940324
+    Y = 45.67581563956502
+    }
+  TextShape
+    {
+    FontFamily = 'Symbol'
+    IsBold = No
+    Height = 22
+    }
+  Text = 'g=1.40'
+$!AttachText 
+  AnchorPos
+    {
+    X = 62.03751654295407
+    Y = 55.46349041947184
+    }
+  TextShape
+    {
+    FontFamily = 'Symbol'
+    IsBold = No
+    Height = 22
+    }
+  Text = 'g=1.66'
+$!FrameControl ActivateByNumber
+  Frame = 1
+$!SetStyleBase Config

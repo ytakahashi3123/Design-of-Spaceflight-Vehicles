@@ -1,0 +1,525 @@
+#!MC 1410
+$!VarSet |LFDSFN1| = '"cp_mach_gamma1.4/tecplot_cp_isent.dat"'
+$!VarSet |LFDSVL1| = '"mach" "cp"'
+$!VarSet |LFDSFN2| = '"cp_mach_gamma1.4/tecplot_cp_shock.dat"'
+$!VarSet |LFDSVL2| = '"mach" "cp"'
+$!VarSet |LFDSFN3| = '"cp_mach_gamma1.1/tecplot_cp_isent.dat" "cp_mach_gamma1.1/tecplot_cp_shock.dat"'
+$!VarSet |LFDSVL3| = '"mach" "cp"'
+$!VarSet |LFDSFN4| = '"cp_mach_gamma1.66/tecplot_cp_isent.dat" "cp_mach_gamma1.66/tecplot_cp_shock.dat"'
+$!VarSet |LFDSVL4| = '"mach" "cp"'
+$!SetStyleBase Factory
+$!GlobalPaper 
+  PaperSizeInfo
+    {
+    Letter
+      {
+      Width = 8.5
+      Height = 11
+      LeftHardClipOffset = 0.125
+      RightHardClipOffset = 0.125
+      TopHardClipOffset = 0.125
+      BottomHardClipOffset = 0.125
+      }
+    }
+$!Page 
+  Name = 'Untitled'
+  PaperAttributes
+    {
+    BackgroundColor = White
+    IsTransparent = Yes
+    OrientPortrait = No
+    ShowGrid = Yes
+    ShowRuler = No
+    ShowPaper = No
+    PaperSize = Letter
+    RulerSpacing = OneInch
+    PaperGridSpacing = HalfInch
+    RegionInWorkArea
+      {
+      X1 = 1
+      Y1 = 0.25
+      X2 = 10
+      Y2 = 8.25
+      }
+    }
+### Frame Number 1 ###
+$!ReadDataSet  '|LFDSFN1|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL1|'
+$!RemoveVar |LFDSVL1|
+$!RemoveVar |LFDSFN1|
+$!ReadDataSet  '|LFDSFN2|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL2|'
+$!RemoveVar |LFDSVL2|
+$!RemoveVar |LFDSFN2|
+$!ReadDataSet  '|LFDSFN3|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL3|'
+$!RemoveVar |LFDSVL3|
+$!RemoveVar |LFDSFN3|
+$!ReadDataSet  '|LFDSFN4|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL4|'
+$!RemoveVar |LFDSVL4|
+$!RemoveVar |LFDSFN4|
+$!FrameLayout 
+  ShowBorder = No
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = 1
+    Y = 0.25
+    }
+  Width = 9
+  Height = 8
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = 'Frame 001'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-6]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    TextShape
+      {
+      FontFamily = 'Calibri'
+      }
+    Box
+      {
+      BoxType = Filled
+      Margin = 2.5
+      }
+    XYPos
+      {
+      X = 62.706
+      Y = 36.915
+      }
+    }
+$!LineMap  [1]
+  Name = '&ZN& (gamma1.40)'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Blue
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [2]
+  Name = '&ZN& (gamma1.40)'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Green
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!LineMap  [3]
+  Name = '&ZN& (gamma1.10)'
+  Assign
+    {
+    Zone = 3
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Custom6
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [4]
+  Name = '&ZN& (gamma1.10)'
+  Assign
+    {
+    Zone = 4
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Custom26
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!LineMap  [5]
+  Name = '&ZN& (gamma1.66)'
+  Assign
+    {
+    Zone = 5
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Custom7
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [6]
+  Name = '&ZN& (gamma1.66)'
+  Assign
+    {
+    Zone = 6
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Custom28
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = 0.10000000000000000555
+    RangeMax = 5
+    AutoGrid = No
+    GRSpacing = 1
+    TickLabel
+      {
+      TextShape
+        {
+        FontFamily = 'Calibri'
+        }
+      }
+    Gridlines
+      {
+      Show = Yes
+      }
+    Title
+      {
+      TitleMode = UseText
+      Text = 'Mach number'
+      TextShape
+        {
+        FontFamily = 'Calibri'
+        }
+      Offset = 5
+      }
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = 0
+    RangeMax = 3
+    AutoGrid = No
+    GRSpacing = 0.5
+    TickLabel
+      {
+      TextShape
+        {
+        FontFamily = 'Calibri'
+        }
+      }
+    Gridlines
+      {
+      Show = Yes
+      }
+    Title
+      {
+      TitleMode = UseText
+      Text = 'Pressure coefficient'
+      TextShape
+        {
+        FontFamily = 'Calibri'
+        }
+      Offset = 9
+      }
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 52.65733556468377
+    Y = 77.36193518941123
+    }
+  TextShape
+    {
+    FontFamily = 'Calibri'
+    IsBold = No
+    Height = 22
+    }
+  Text = 'gamma=1.40'
+$!AttachText 
+  AnchorPos
+    {
+    X = 63.69237790963022
+    Y = 49.33820173436786
+    }
+  TextShape
+    {
+    FontFamily = 'Calibri'
+    IsBold = No
+    Height = 22
+    }
+  Text = 'gamma=1.10'
+$!AttachText 
+  AnchorPos
+    {
+    X = 55.90293625437388
+    Y = 71.42857142857143
+    }
+  TextShape
+    {
+    FontFamily = 'Calibri'
+    IsBold = No
+    Height = 22
+    }
+  Text = 'gamma=1.66'
+$!AttachText 
+  AnchorPos
+    {
+    X = 54.7669760129823
+    Y = 40.66636239160201
+    }
+  TextShape
+    {
+    FontFamily = 'Calibri'
+    IsBold = No
+    Height = 22
+    }
+  Text = 'gamma=1.66'
+$!AttachText 
+  AnchorPos
+    {
+    X = 50.46655509914289
+    Y = 82.1999087174806
+    }
+  TextShape
+    {
+    FontFamily = 'Calibri'
+    IsBold = No
+    Height = 22
+    }
+  Text = 'gamma=1.10'
+$!AttachText 
+  AnchorPos
+    {
+    X = 58.98625690957952
+    Y = 44.95664080328618
+    }
+  TextShape
+    {
+    FontFamily = 'Calibri'
+    IsBold = No
+    Height = 22
+    }
+  Text = 'gamma=1.40'
+$!AttachGeom 
+  AnchorPos
+    {
+    X = 2.48950230741924
+    Y = 2.784691802948307
+    }
+  ArrowheadStyle = Filled
+  ArrowheadAttachment = AtEnd
+  ArrowheadSize = 2.5
+  RawData
+1
+2
+0 0 
+-0.551319360733 -0.0853550806642 
+$!AttachGeom 
+  AnchorPos
+    {
+    X = 2.653837889007218
+    Y = 2.606868713212848
+    }
+  ArrowheadStyle = Filled
+  ArrowheadAttachment = AtEnd
+  ArrowheadSize = 2.5
+  RawData
+1
+2
+0 0 
+-0.57252395153 -0.0248952321708 
+$!AttachGeom 
+  AnchorPos
+    {
+    X = 2.876486096319962
+    Y = 2.365029311172625
+    }
+  ArrowheadStyle = Filled
+  ArrowheadAttachment = AtEnd
+  ArrowheadSize = 2.5
+  RawData
+1
+2
+0 0 
+-0.74216067791 0.021338770166 
+$!AttachGeom 
+  AnchorPos
+    {
+    X = 3.380095136670217
+    Y = 1.536373713005388
+    }
+  ArrowheadStyle = Filled
+  ArrowheadAttachment = AtEnd
+  ArrowheadSize = 2.5
+  RawData
+1
+2
+0 0 
+-0.286261975765 0.31296864152 
+$!AttachGeom 
+  AnchorPos
+    {
+    X = 3.0461228257011
+    Y = 1.35855062326993
+    }
+  ArrowheadStyle = Filled
+  ArrowheadAttachment = AtEnd
+  ArrowheadSize = 2.5
+  RawData
+1
+2
+0 0 
+-0.212045907974 0.384097874165 
+$!AttachGeom 
+  AnchorPos
+    {
+    X = 2.781065436043071
+    Y = 1.180727533534471
+    }
+  ArrowheadStyle = Filled
+  ArrowheadAttachment = AtEnd
+  ArrowheadSize = 2.5
+  RawData
+1
+2
+0 0 
+-0.344574600458 0.47300940752 
+$!FrameControl ActivateByNumber
+  Frame = 1
+$!SetStyleBase Config

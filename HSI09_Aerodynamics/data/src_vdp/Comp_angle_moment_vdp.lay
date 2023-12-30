@@ -1,0 +1,321 @@
+#!MC 1410
+$!VarSet |LFDSFN1| = '"tecplot_vdp.dat"'
+$!VarSet |LFDSVL1| = '"Time[s]" "AoA[deg]" "AngularVelocity[deg/s]" "m"'
+$!SetStyleBase Factory
+$!GlobalPaper 
+  PaperSizeInfo
+    {
+    Letter
+      {
+      Width = 8.5
+      Height = 11
+      LeftHardClipOffset = 0.125
+      RightHardClipOffset = 0.125
+      TopHardClipOffset = 0.125
+      BottomHardClipOffset = 0.125
+      }
+    }
+$!Page 
+  Name = 'Untitled'
+  PaperAttributes
+    {
+    BackgroundColor = White
+    IsTransparent = Yes
+    OrientPortrait = No
+    ShowGrid = Yes
+    ShowRuler = No
+    ShowPaper = No
+    PaperSize = Letter
+    RulerSpacing = OneInch
+    PaperGridSpacing = HalfInch
+    RegionInWorkArea
+      {
+      X1 = 1
+      Y1 = 0.25
+      X2 = 10
+      Y2 = 8.25
+      }
+    }
+### Frame Number 1 ###
+$!ReadDataSet  '|LFDSFN1|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL1|'
+$!RemoveVar |LFDSVL1|
+$!RemoveVar |LFDSFN1|
+$!FrameLayout 
+  ShowBorder = No
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = 1
+    Y = 0.25
+    }
+  Width = 9
+  Height = 8
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = 'Frame 001'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1,3]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    TextShape
+      {
+      FontFamily = 'Calibri'
+      }
+    Box
+      {
+      BoxType = Filled
+      Margin = 2.5
+      }
+    XYPos
+      {
+      X = 45.653
+      Y = 25.106
+      }
+    }
+$!LineMap  [1]
+  Name = '&DV&'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Blue
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [2]
+  Name = '&DV&'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 3
+    }
+  Lines
+    {
+    Color = Green
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!LineMap  [3]
+  Name = '&DV&'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 4
+    YAxis = 2
+    }
+  Lines
+    {
+    Color = Green
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Blue
+    FillColor = Blue
+    }
+  BarCharts
+    {
+    Color = Blue
+    FillColor = Blue
+    }
+  ErrorBars
+    {
+    Color = Blue
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    Y1 = 10.896
+    Y2 = 87.896
+    }
+  ViewportTopSnapTarget = 87.8964267219
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = 3
+    RangeMax = 4
+    GRSpacing = 0.2
+    TickLabel
+      {
+      TextShape
+        {
+        FontFamily = 'Calibri'
+        }
+      }
+    Gridlines
+      {
+      Show = Yes
+      }
+    Title
+      {
+      TitleMode = UseText
+      Text = 'Time, s'
+      TextShape
+        {
+        FontFamily = 'Calibri'
+        }
+      Offset = 5
+      }
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -20
+    RangeMax = 20
+    GRSpacing = 5
+    TickLabel
+      {
+      TextShape
+        {
+        FontFamily = 'Calibri'
+        }
+      }
+    Gridlines
+      {
+      Show = Yes
+      }
+    Title
+      {
+      TitleMode = UseText
+      Text = 'Pitch angle,  degree'
+      TextShape
+        {
+        FontFamily = 'Calibri'
+        }
+      Offset = 9
+      }
+    }
+$!XYLineAxis 
+  YDetail 2
+    {
+    RangeMin = -180.4012603759765625
+    RangeMax = 180.4012603759765625
+    IsReversed = Yes
+    GRSpacing = 50
+    Title
+      {
+      TitleMode = UseText
+      Text = 'Reduced pitching moment'
+      TextShape
+        {
+        FontFamily = 'Calibri'
+        }
+      Offset = 9
+      }
+    AxisLine
+      {
+      AxisAlignment = WithGridMax
+      }
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 33.5893894930663
+    Y = 65.51009839461419
+    }
+  TextShape
+    {
+    FontFamily = 'Calibri'
+    IsBold = No
+    Height = 22
+    }
+  Text = 'Angle'
+$!AttachText 
+  AnchorPos
+    {
+    X = 43.34829391794695
+    Y = 40.54893837389955
+    }
+  TextShape
+    {
+    FontFamily = 'Calibri'
+    IsBold = No
+    Height = 22
+    }
+  Text = 'Moment'
+$!AttachGeom 
+  AnchorPos
+    {
+    X = 3.475840957477415
+    Y = 13.91280313679071
+    }
+  LineThickness = 0.4
+  ArrowheadStyle = Filled
+  ArrowheadAttachment = AtEnd
+  RawData
+1
+3
+0 0 
+0 -6.5641245842 
+-0.157124504447 -6.5641245842 
+$!AttachGeom 
+  AnchorPos
+    {
+    X = 3.384389588967527
+    Y = -1.58283535211552
+    }
+  LineThickness = 0.4
+  ArrowheadStyle = Filled
+  ArrowheadAttachment = AtEnd
+  RawData
+1
+3
+-2.82180554478E-08 3.54574964945E-08 
+-2.82180554478E-08 -4.35814809799 
+0.179220169783 -4.35814809799 
+$!FrameControl ActivateByNumber
+  Frame = 1
+$!SetStyleBase Config

@@ -1,0 +1,20 @@
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %フォントカラー
+\usepackage{amssymb} %数式記号
+\usepackage{amsmath} %数式
+\usepackage[utf8]{inputenc} %発音区別符アルファベットの直接入力
+\begin{document}
+\begin{align*}& {\boldsymbol k}_{x1} = {\boldsymbol v}^{n} \Delta t, \ \  {\boldsymbol k}_{v1} = {\boldsymbol F}^{n} \left( {\boldsymbol x}^{n}, {\boldsymbol v}^{n} \right) \Delta t \ ,
+ \\
+& {\boldsymbol k}_{x2} = \left( {\boldsymbol v}^{n} + \frac{1}{2} {\boldsymbol k}_{v1} \right) \Delta t,
+ \ \ 
+{\boldsymbol k}_{v2} = {\boldsymbol F}^{n} \left( {\boldsymbol x}^{n} + \frac{1}{2} {\boldsymbol k}_{x1}, {\boldsymbol v}^{n} + \frac{1}{2} {\boldsymbol k}_{v1} \right) \Delta t , 
+\\
+& {\boldsymbol k}_{x3} = \left( {\boldsymbol v}^{n} + \frac{1}{2} {\boldsymbol k}_{v2} \right) \Delta t , 
+\ \ 
+{\boldsymbol k}_{v3} = {\boldsymbol F}^{n} \left( {\boldsymbol x}^{n} + \frac{1}{2} {\boldsymbol k}_{x2}, {\boldsymbol v}^{n} + \frac{1}{2} {\boldsymbol k}_{v2} \right) \Delta t , 
+\\
+&  {\boldsymbol k}_{x4} = \left( {\boldsymbol v}^{n} + \frac{1}{2} {\boldsymbol k}_{v3} \right) \Delta t , 
+\ \
+{\boldsymbol k}_{v4} = {\boldsymbol F}^{n} \left( {\boldsymbol x}^{n} + {\boldsymbol k}_{x3}, {\boldsymbol v}^{n} + {\boldsymbol k}_{v3} \right) \Delta t .\end{align*}
+\end{document}
